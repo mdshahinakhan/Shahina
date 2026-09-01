@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MD Shahina Khan — Engineering Record</title>
+<meta name="description" content="Software Engineering Lead — 13+ years in production systems, 5 years in Web3 wallet and identity infrastructure. Privy, ZeroDev, Solidity, Next.js, PostgreSQL.">
+<meta name="author" content="MD Shahina Khan">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="MD Shahina Khan — Engineering Record">
+<meta property="og:description" content="Software Engineering Lead — 13+ years in production systems, 5 years in Web3 wallet and identity infrastructure.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B5D51'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%23fff' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --ground:#F7F7F4;
+    --surface:#FFFFFF;
+    --surface-sunk:#F0F1ED;
+    --ink:#15191B;
+    --ink-mid:#4C555A;
+    --ink-soft:#6E787D;
+    --rule:#DEE0DB;
+    --rule-strong:#C6CAC3;
+    --accent:#0B5D51;
+    --accent-ink:#084A41;
+    --accent-wash:#E4EFEB;
+    --shadow:0 1px 2px rgba(21,25,27,.05), 0 10px 30px -20px rgba(21,25,27,.25);
+
+    --f-sans:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --f-serif:"IBM Plex Serif", ui-serif, Georgia, "Times New Roman", serif;
+    --f-mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --measure:66ch;
+    --rail:186px;
+    --gap:clamp(28px,4vw,56px);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0E1112; --surface:#15191A; --surface-sunk:#191E1F;
+      --ink:#E9EBE7; --ink-mid:#A3ADB0; --ink-soft:#828C90;
+      --rule:#262C2D; --rule-strong:#39413F;
+      --accent:#57C3AC; --accent-ink:#7FD6C2; --accent-wash:#12312C;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0E1112; --surface:#15191A; --surface-sunk:#191E1F;
+    --ink:#E9EBE7; --ink-mid:#A3ADB0; --ink-soft:#828C90;
+    --rule:#262C2D; --rule-strong:#39413F;
+    --accent:#57C3AC; --accent-ink:#7FD6C2; --accent-wash:#12312C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--f-sans); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+
+  a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid rgba(11,93,81,.32)}
+  :root[data-theme="dark"] a, :root:not([data-theme="light"]) a{border-bottom-color:rgba(87,195,172,.34)}
+  a:hover{border-bottom-color:currentColor}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+
+  /* ---- theme toggle ---- */
+  .toggle{
+    position:fixed;top:16px;right:16px;z-index:50;
+    font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--surface);color:var(--ink-soft);
+    border:1px solid var(--rule-strong);border-radius:4px;
+    padding:7px 11px;cursor:pointer;line-height:1;
+    box-shadow:var(--shadow);
+  }
+  .toggle:hover{color:var(--accent-ink);border-color:var(--accent)}
+  .toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* ---- masthead ---- */
+  .masthead{padding:clamp(56px,9vw,104px) 0 clamp(30px,4vw,44px);border-bottom:1px solid var(--rule-strong)}
+  .eyebrow{
+    font-family:var(--f-mono);font-size:11.5px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+    display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
+  }
+  .eyebrow .dot{color:var(--rule-strong)}
+  h1{
+    font-size:clamp(40px,7vw,72px);line-height:1;font-weight:600;
+    letter-spacing:-.03em;margin:18px 0 0;text-wrap:balance;
+  }
+  .role{
+    font-size:clamp(17px,2.3vw,22px);color:var(--ink-mid);font-weight:400;
+    margin:14px 0 0;letter-spacing:-.008em;max-width:46ch;text-wrap:balance;
+  }
+  .role b{color:var(--ink);font-weight:500}
+  .contact{
+    margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 22px;
+    font-family:var(--f-mono);font-size:13px;color:var(--ink-mid);
+  }
+  .contact a{color:var(--ink-mid);border-bottom-color:var(--rule-strong)}
+  .contact a:hover{color:var(--accent-ink)}
+
+  /* ---- stat band ---- */
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-bottom:1px solid var(--rule);
+  }
+  .stat{padding:clamp(24px,3.4vw,34px) 0;padding-right:24px;border-left:1px solid var(--rule)}
+  .stat:first-child{border-left:none}
+  .stat:not(:first-child){padding-left:clamp(20px,3vw,34px)}
+  .stat .num{
+    font-size:clamp(28px,4.4vw,42px);font-weight:600;letter-spacing:-.03em;
+    line-height:1;color:var(--accent-ink);font-variant-numeric:tabular-nums;
+  }
+  .stat .lbl{
+    margin-top:10px;font-size:13.5px;color:var(--ink-mid);line-height:1.45;max-width:22ch;
+  }
+
+  /* ---- lede ---- */
+  .lede{padding:clamp(38px,5.5vw,60px) 0;border-bottom:1px solid var(--rule)}
+  .lede p{
+    font-family:var(--f-serif);font-size:clamp(18px,2.5vw,22px);line-height:1.6;
+    max-width:var(--measure);margin:0;color:var(--ink);
+  }
+  .lede p + p{margin-top:.85em;color:var(--ink-mid);font-size:clamp(16.5px,2.1vw,19px)}
+
+  /* ---- sections ---- */
+  section{padding:clamp(44px,6.5vw,76px) 0;border-bottom:1px solid var(--rule)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(26px,3.6vw,40px);flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(22px,2.9vw,29px);font-weight:600;letter-spacing:-.022em;margin:0}
+  .sec-head .tag{
+    font-family:var(--f-mono);font-size:11.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+  .sec-note{font-size:15.5px;color:var(--ink-mid);max-width:var(--measure);margin:-16px 0 32px}
+
+  /* ---- entries ---- */
+  .entry{display:grid;grid-template-columns:var(--rail) 1fr;gap:var(--gap);padding:32px 0;border-top:1px solid var(--rule)}
+  .entry:first-of-type{border-top:none;padding-top:2px}
+
+  .rail{font-family:var(--f-mono);font-size:12.5px;line-height:1.55;color:var(--ink-soft)}
+  .rail .org{color:var(--ink);font-weight:600;font-size:13.5px;letter-spacing:-.012em;display:block;margin-bottom:6px}
+  .rail .dates{display:block;font-variant-numeric:tabular-nums}
+  .rail .kind{display:block;margin-top:10px}
+
+  .entry h3{font-size:clamp(18px,2.3vw,21.5px);font-weight:600;letter-spacing:-.018em;margin:0 0 11px;text-wrap:balance}
+  .entry > .body > p{margin:0 0 15px;max-width:var(--measure);color:var(--ink-mid);font-size:15.5px}
+  .entry ul{margin:0;padding-left:0;list-style:none;max-width:var(--measure)}
+  .entry li{position:relative;padding-left:20px;margin-bottom:10px;font-size:15.5px;color:var(--ink-mid)}
+  .entry li::before{content:"";position:absolute;left:0;top:.63em;width:8px;height:1px;background:var(--rule-strong)}
+  .entry li strong{color:var(--ink);font-weight:600}
+
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .chip{
+    font-family:var(--f-mono);font-size:11.5px;padding:4px 8px;border-radius:3px;
+    background:var(--surface-sunk);color:var(--ink-soft);border:1px solid var(--rule);white-space:nowrap;
+  }
+  .chip.hit{background:var(--accent-wash);color:var(--accent-ink);border-color:rgba(11,93,81,.28);font-weight:500}
+  :root[data-theme="dark"] .chip.hit{border-color:rgba(87,195,172,.3)}
+
+  /* ---- table ---- */
+  .table-scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+  thead th{
+    font-family:var(--f-mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-soft);text-align:left;font-weight:500;
+    padding:14px 18px;border-bottom:1px solid var(--rule-strong);background:var(--surface-sunk);
+  }
+  tbody td{padding:13px 18px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-mid)}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+  td.where{font-size:13.5px}
+  .lvl{
+    font-family:var(--f-mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+    padding:3.5px 8px;border-radius:3px;white-space:nowrap;display:inline-block;font-weight:500;
+  }
+  .lvl.prod{background:var(--accent-wash);color:var(--accent-ink);border:1px solid rgba(11,93,81,.28)}
+  .lvl.work{background:var(--surface-sunk);color:var(--ink-soft);border:1px solid var(--rule-strong)}
+  :root[data-theme="dark"] .lvl.prod{border-color:rgba(87,195,172,.3)}
+
+  /* ---- callout ---- */
+  .callout{
+    background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+    padding:clamp(22px,3.2vw,30px);max-width:var(--measure);box-shadow:var(--shadow);
+  }
+  .callout h3{margin:0 0 11px;font-size:17px;font-weight:600;letter-spacing:-.012em}
+  .callout p{margin:0 0 13px;font-size:15.5px;color:var(--ink-mid)}
+  .callout p:last-child{margin-bottom:0}
+  .callout strong{color:var(--ink);font-weight:600}
+
+  /* ---- earlier ---- */
+  .earlier{display:grid;grid-template-columns:var(--rail) 1fr;gap:var(--gap);padding-top:32px;border-top:1px solid var(--rule)}
+  .earlier p{margin:0;max-width:var(--measure);color:var(--ink-mid);font-size:15.5px}
+
+  /* ---- footer ---- */
+  footer{padding:clamp(44px,6vw,68px) 0 clamp(56px,8vw,88px)}
+  footer .sig{font-size:clamp(21px,3vw,28px);font-weight:600;letter-spacing:-.024em;margin:0 0 14px;text-wrap:balance}
+  footer .closing{max-width:var(--measure);color:var(--ink-mid);margin:0;font-size:16px}
+  .fineprint{
+    font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);
+    margin-top:38px;padding-top:20px;border-top:1px solid var(--rule);
+  }
+
+  /* ---- reveal ---- */
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1)}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){ .rv{opacity:1;transform:none;transition:none} }
+
+  @media (max-width:820px){
+    .stats{grid-template-columns:1fr;border-bottom:1px solid var(--rule)}
+    .stat{border-left:none;border-top:1px solid var(--rule);padding-left:0 !important}
+    .stat:first-child{border-top:none}
+  }
+  @media (max-width:760px){
+    .entry,.earlier{grid-template-columns:1fr;gap:16px}
+    .rail{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+    .rail .org{margin-bottom:0}
+    .rail .kind{margin-top:0}
+  }
+
+  @media print{
+    .toggle{display:none}
+    body{background:#fff;color:#000;font-size:11pt}
+    section,.entry,.earlier{break-inside:avoid}
+    .table-scroll{overflow:visible;box-shadow:none}
+    a{border-bottom:none}
+  }
+</style>
+</head>
+<body>
+
+<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span>Engineering Record</span><span class="dot">/</span>
+      <span>Prepared for Ideologi</span><span class="dot">/</span>
+      <span>Core Engineering</span>
+    </div>
+    <h1>MD Shahina Khan</h1>
+    <p class="role">Software Engineering Lead — <b>full-stack systems</b>, <b>identity &amp; wallet infrastructure</b>, <b>Ethereum</b>.</p>
+    <div class="contact">
+      <a href="mailto:mdshahinakhan03@gmail.com">mdshahinakhan03@gmail.com</a>
+      <span>(206) 690-3487</span>
+      <span>Bridgeton, MO</span>
+    </div>
+  </header>
+
+  <div class="stats rv">
+    <div class="stat">
+      <div class="num">13+</div>
+      <div class="lbl">Years building and leading production engineering teams</div>
+    </div>
+    <div class="stat">
+      <div class="num">5</div>
+      <div class="lbl">Years shipping Web3 wallet and identity infrastructure</div>
+    </div>
+    <div class="stat">
+      <div class="num">16<span style="color:var(--ink-soft);font-size:.62em;font-weight:500"> / 18</span></div>
+      <div class="lbl">Technologies on your stack list I have run in production</div>
+    </div>
+  </div>
+
+  <div class="lede rv">
+    <p>I build the layer where application development meets decentralized infrastructure — embedded wallets, account abstraction, smart contract integration, and the authentication that has to hold all of it together.</p>
+    <p>That is the specific problem Hyperlogue has to solve well: collaboration at scale only works if joining it is effortless. Below is what I have shipped, and where it lines up with what you are building.</p>
+  </div>
+
+  <section>
+    <div class="sec-head rv">
+      <h2>Selected work</h2>
+      <span class="tag">Most recent first</span>
+    </div>
+
+    <article class="entry rv">
+      <div class="rail">
+        <span class="org">Harvey AI</span>
+        <span class="dates">Oct 2023 — Present</span>
+        <span class="kind">Lead Software Engineer</span>
+      </div>
+      <div class="body">
+        <h3>Identity and wallet layer for a legal document automation platform</h3>
+        <p>Led core engineering on cloud-native services processing legal document workflows across distributed file systems, owning how users authenticate and how their credentials are held.</p>
+        <ul>
+          <li>Built the identity layer on <strong>Privy</strong> with <strong>ZeroDev account abstraction</strong>, running alongside conventional <strong>OAuth 2.0</strong> and <strong>JWT</strong> authorization — the same Web2/Web3 pairing your platform runs on.</li>
+          <li>Connected LLM APIs to <strong>PostgreSQL</strong> in an AWS serverless environment, and reworked legacy schema access patterns to cut query time and server load at peak.</li>
+          <li>Owned <strong>Railway</strong> deployment configuration and CI/CD, plus <strong>CRON</strong> scheduling for database maintenance and background sync that runs without interrupting live sessions.</li>
+          <li>Stood up telemetry dashboards and automated error reporting that trace production latency back to specific service nodes.</li>
+          <li>Built a cryptographic key vault for authentication secrets, and enforced access governance across system layers for financial-sector compliance audits.</li>
+          <li>Maintained the <strong>Next.js</strong> front end — Tailwind, error boundaries with graceful fallback UI, SSR and caching tuned for load time.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip hit">Privy</span><span class="chip hit">ZeroDev</span><span class="chip hit">Railway</span>
+          <span class="chip hit">PostgreSQL</span><span class="chip hit">OAuth 2.0</span><span class="chip hit">JWT</span>
+          <span class="chip hit">Next.js</span><span class="chip hit">CRON</span><span class="chip hit">Distributed FS</span>
+          <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">AWS</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry rv">
+      <div class="rail">
+        <span class="org">Perficient</span>
+        <span class="dates">Jul 2021 — Sep 2023</span>
+        <span class="kind">Lead Full Stack / Web3 Engineer</span>
+      </div>
+      <div class="body">
+        <h3>Ethereum applications for supply chain and financial services clients</h3>
+        <p>Led a team building EVM applications for digital supply chain networks, and advised enterprise clients on decentralized identity and key management standards.</p>
+        <ul>
+          <li>Wrote <strong>Solidity</strong> smart contract integration layers and client onboarding portals for digital asset verification.</li>
+          <li>Integrated Web3 providers, <strong>Ethers.js</strong> and wallet connectors to carry authentication across multi-chain architectures.</li>
+          <li>Ran <strong>Hardhat</strong> and Truffle pipelines inside GitHub Actions, executing contract security checks before any deploy.</li>
+          <li>Built GraphQL and <strong>REST</strong> interfaces connecting client-side state to decentralized storage nodes for real-time transaction event tracking.</li>
+          <li>Shipped an NFT marketplace with <strong>Privy</strong> authentication for verifiable ownership certificates.</li>
+          <li>Debugged production transaction failures by reading on-chain event logs and tracing contract interaction parameters — the gas-optimization dashboards came out of that work.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip hit">Ethereum</span><span class="chip hit">Solidity</span><span class="chip hit">Smart contracts</span>
+          <span class="chip hit">Wallet infrastructure</span><span class="chip hit">Privy</span><span class="chip hit">REST APIs</span>
+          <span class="chip hit">Git</span><span class="chip">Ethers.js</span><span class="chip">Hardhat</span>
+          <span class="chip">GraphQL</span><span class="chip">TypeScript</span><span class="chip">Next.js</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry rv">
+      <div class="rail">
+        <span class="org">CFA Institute</span>
+        <span class="dates">Feb 2018 — Jun 2021</span>
+        <span class="kind">Senior Full Stack Engineer</span>
+      </div>
+      <div class="body">
+        <h3>Candidate portal and assessment engine for global certification exams</h3>
+        <p>Built the secure portal and test-delivery system used by candidates sitting professional finance examinations across international time zones — high-stakes, regulated, and unforgiving of downtime.</p>
+        <ul>
+          <li>Connected <strong>Java</strong> backend services to <strong>PostgreSQL</strong> with <strong>OAuth 2.0</strong> credential verification — the closest analogue in my experience to your Java MicroProfile REST layer.</li>
+          <li>Built the assessment engine with server-side rendering for consistent performance under exam load.</li>
+          <li>Integrated payment gateway APIs with safe transaction token handling under financial-industry data protection rules.</li>
+          <li>Enforced role-based authorization and secure token storage to satisfy international data privacy mandates for candidate records.</li>
+          <li>Ran services on Docker and Kubernetes through Jenkins CI/CD, with Cypress end-to-end suites gating promotion to staging.</li>
+          <li>Reworked API gateway routing between the React front end and backend services while keeping full audit logging intact.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip hit">Java</span><span class="chip hit">PostgreSQL</span><span class="chip hit">OAuth 2.0</span>
+          <span class="chip hit">REST APIs</span><span class="chip hit">Next.js</span><span class="chip">Docker</span>
+          <span class="chip">Kubernetes</span><span class="chip">Jenkins</span><span class="chip">Cypress</span><span class="chip">TypeScript</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry rv">
+      <div class="rail">
+        <span class="org">GOJO Industries</span>
+        <span class="dates">Apr 2014 — Dec 2017</span>
+        <span class="kind">Senior Software Engineer</span>
+      </div>
+      <div class="body">
+        <h3>Inventory tracking dashboards across global manufacturing sites</h3>
+        <p>Built operational dashboards monitoring stock across warehouse logistics hubs, and the integrations feeding them.</p>
+        <ul>
+          <li>Integrated third-party ERP systems over secure <strong>REST</strong> APIs with <strong>JWT</strong> authorization.</li>
+          <li>Designed and optimized <strong>PostgreSQL</strong> schemas and queries for operational metrics reporting.</li>
+          <li>Built Jest and JUnit suites into CI pipelines, and configured RBAC and session management for compliance auditing.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip hit">PostgreSQL</span><span class="chip hit">REST APIs</span><span class="chip hit">JWT</span>
+          <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Jest</span><span class="chip">JUnit</span>
+        </div>
+      </div>
+    </article>
+
+    <div class="earlier rv">
+      <div class="rail">
+        <span class="org">ITG Brands</span>
+        <span class="dates">Aug 2012 — Mar 2014</span>
+        <span class="kind">Junior Software Engineer</span>
+      </div>
+      <p>Interactive data entry interfaces in JavaScript, HTML and CSS for plant inventory systems; JDBC connectors joining Java services to relational databases; JUnit testing and version control under Git and Subversion.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head rv">
+      <h2>Coverage against your stack</h2>
+      <span class="tag">Ideologi Core Engineering</span>
+    </div>
+    <p class="sec-note rv">You noted you are building a complementary team rather than looking for depth in every technology. This is a straight read of where I sit on each — production experience distinguished from working knowledge, so you can plan around the gaps rather than discover them.</p>
+    <div class="table-scroll rv">
+      <table>
+        <thead>
+          <tr><th scope="col">Technology</th><th scope="col">Level</th><th scope="col">Where</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>TypeScript / JavaScript</td><td><span class="lvl prod">Production</span></td><td class="where">All five roles, 2012 — present</td></tr>
+          <tr><td>React / Next.js</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI, Perficient, CFA Institute</td></tr>
+          <tr><td>Node.js</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI, Perficient, CFA Institute, GOJO</td></tr>
+          <tr><td>HTML / CSS</td><td><span class="lvl prod">Production</span></td><td class="where">Throughout; Tailwind at Harvey AI</td></tr>
+          <tr><td>Privy</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI identity layer; NFT marketplace at Perficient</td></tr>
+          <tr><td>ZeroDev</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI — account abstraction</td></tr>
+          <tr><td>Ethereum / Solidity</td><td><span class="lvl prod">Production</span></td><td class="where">Perficient — EVM applications, contract integration</td></tr>
+          <tr><td>Smart contracts</td><td><span class="lvl prod">Production</span></td><td class="where">Perficient — Hardhat / Truffle, on-chain debugging</td></tr>
+          <tr><td>Wallet infrastructure</td><td><span class="lvl prod">Production</span></td><td class="where">Perficient — Ethers.js, multi-chain connectors</td></tr>
+          <tr><td>OAuth 2.0 / JWT</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI, CFA Institute, GOJO</td></tr>
+          <tr><td>PostgreSQL</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI, CFA Institute, GOJO — schema and query tuning</td></tr>
+          <tr><td>REST APIs</td><td><span class="lvl prod">Production</span></td><td class="where">Throughout; GraphQL at Harvey AI and Perficient</td></tr>
+          <tr><td>Railway</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI — deployment configuration and CI/CD</td></tr>
+          <tr><td>AWS / distributed file systems</td><td><span class="lvl prod">Production</span></td><td class="where">Harvey AI — serverless, distributed document storage</td></tr>
+          <tr><td>Git</td><td><span class="lvl prod">Production</span></td><td class="where">Throughout; GitHub Actions and Jenkins pipelines</td></tr>
+          <tr><td>Java</td><td><span class="lvl prod">Production</span></td><td class="where">CFA Institute services; JDBC at ITG Brands</td></tr>
+          <tr><td>Java MicroProfile / Helidon</td><td><span class="lvl work">Working knowledge</span></td><td class="where">Java REST service background; would ramp on your codebase</td></tr>
+          <tr><td>AT Protocol / Bluesky</td><td><span class="lvl work">Working knowledge</span></td><td class="where">Followed the protocol; no production deployment yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head rv">
+      <h2>On code samples</h2>
+      <span class="tag">Repository access</span>
+    </div>
+    <div class="callout rv">
+      <h3>Why there are no public repositories from my employment</h3>
+      <p>Every system above was built in private repositories under NDA — legal document workflows, exam candidate records, enterprise client blockchain deployments. Those obligations hold, and I would extend your codebase exactly the same discipline.</p>
+      <p>What I can offer instead is my time: I am glad to <strong>screen-share and walk through architecture decisions in depth</strong>, take a live technical exercise, or work through any part of your existing stack with your engineers. That is usually a better signal than a repository anyway.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="sig rv">Happy to go as deep as you want on any of this.</p>
+    <p class="closing rv">The fastest way to assess me is a conversation with whoever will be reviewing my pull requests. Give me an hour with your engineers and a whiteboard, or a problem from your actual backlog, and you will learn more than a repository would tell you.</p>
+    <div class="contact rv">
+      <a href="mailto:mdshahinakhan03@gmail.com">mdshahinakhan03@gmail.com</a>
+      <span>(206) 690-3487</span>
+      <span>Bridgeton, MO</span>
+    </div>
+    <p class="fineprint">MD Shahina Khan — engineering record prepared for Ideologi Core Engineering</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("themeToggle");
+
+  try {
+    var saved = localStorage.getItem("sk-theme");
+    if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+  } catch (e) {}
+
+  btn.addEventListener("click", function () {
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
+    var next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("sk-theme", next); } catch (e) {}
+  });
+
+  var items = document.querySelectorAll(".rv");
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    items.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
